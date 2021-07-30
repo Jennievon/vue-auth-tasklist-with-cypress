@@ -1,0 +1,54 @@
+:root {
+	--page-container-margin: 1.25rem;
+	--color-black: #1e1147;
+	--color-black-rgb: 30, 17, 71;
+	--light-grey-color: #62687a;
+	--lighter-grey-color: #8f9bb3;
+	--primary-color: #ff9100;
+	--primary-color-rgb: 255, 145, 0;
+	--primary-color-inverse: #ffffff;
+	--color-white: #ffffff;
+	--color-white-rgb: 255, 255, 255;
+	--success-color: #32cc0e;
+	--secondary-success-color: #a2c438;
+	--danger-color: #ff3d3d;
+	--background-color: #fafafe;
+
+	--section-max-width: 1200px;
+
+	@media (min-width: 800px) {
+		--page-container-margin: 8.4375rem;
+	}
+}
+
+@import "./button";
+@import "./card";
+@import "./form";
+@import "./mixins";
+@import "./reset";
+
+form .btn {
+	transition: all 0.5s;
+}
+
+.success {
+	background: #a2c438;
+}
+
+.loader {
+	border: 3px solid #fff;
+	border-bottom-color: transparent;
+	width: 20px;
+	height: 20px;
+	border-radius: 50px;
+	animation: loader 1s linear infinite;
+
+	@keyframes loader {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+}

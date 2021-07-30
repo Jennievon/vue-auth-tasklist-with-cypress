@@ -1,0 +1,135 @@
+body,
+html {
+	font-size: 16px;
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: normal;
+	color: var(--color-black);
+	overflow-x: hidden;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'Gilroy';
+	font-weight: 300;
+}
+
+ul,
+li,
+ol {
+	list-style-type: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+ol,
+body,
+html {
+	margin: 0;
+	padding: 0;
+}
+
+.modal p {
+	line-height: 25px;
+
+	&:not(:first-child) {
+		margin-top: 30px;
+	}
+}
+
+button {
+	background: transparent;
+	border: none;
+	font-size: 16px;
+	color: var(--color-black);
+	border-radius: 5px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+img {
+	width: 100%;
+}
+
+.pointer-cursor {
+	cursor: pointer;
+}
+
+.display-none {
+	display: none;
+}
+
+.product-details section {
+	p {
+		margin-top: 30px;
+		line-height: 25px;
+	}
+
+	li {
+		line-height: 25px;
+	}
+
+	ol {
+		li {
+			list-style-type: decimal;
+		}
+
+		& > li:not(:first-child) {
+			margin-top: 50px;
+		}
+	}
+
+	ul {
+		margin-top: 30px;
+
+		li {
+			margin-top: 30px;
+			margin-left: 30px;
+		}
+	}
+}
+
+.document {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 50px;
+		font-weight: 700;
+	}
+}
+
+.gm-style .gm-style-iw-c {
+	padding: 12px !important;
+	background-color: var(--color-black);
+	color: var(--color-white);
+	button.gm-ui-hover-effect img {
+		filter: invert(100%) !important;
+	}
+}
+
+.gm-style .gm-style-iw-d {
+	overflow: initial !important;
+}
+
+.gm-style .gm-style-iw-t::after {
+	background: var(--color-black);
+}
+
+.gm-style-iw a {
+	color: var(--primary-color);
+}

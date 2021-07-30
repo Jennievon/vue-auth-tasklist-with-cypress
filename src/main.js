@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import VueRouter from "vue-router";
 
+import { mixin } from "./mixins/client.js";
 import { routes } from "./router/index.js";
 
 // route guard
@@ -12,6 +13,8 @@ const router = new VueRouter({
 });
 
 Vue.config.productionTip = false;
+
+Vue.mixin(mixin);
 
 new Vue({
 	el: "#app",
