@@ -1,7 +1,7 @@
 export const mixin = {
 	methods: {
 		async postData(url = "", data = {}) {
-			const response = await fetch(`${url}`, {
+			const response = await fetch(`http://localhost:3000/${url}`, {
 				method: "POST",
 				mode: "cors",
 				cache: "no-cache",

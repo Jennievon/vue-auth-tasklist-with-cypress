@@ -6,7 +6,7 @@ module.exports = {
 			},
 		},
 	},
-	devServer: {
-		proxy: "https://api-nodejs-todolist.herokuapp.com/",
-	},
+	// devServer: {
+	// 	proxy: "http://localhost:3000/",
+	// },
 };

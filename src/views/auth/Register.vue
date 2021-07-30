@@ -1,9 +1,9 @@
 <template>
 	<div class="card">
 		<div>
-			<h2>Login</h2>
+			<h2>Register</h2>
 		</div>
-		<form @submit.prevent="login">
+		<form @submit.prevent="registerUser">
 			<div class="input">
 				<Input
 					:id="'email'"
@@ -55,10 +55,10 @@
 			};
 		},
 		methods: {
-			async login() {
+			async registerUser() {
 				this.submitting = true;
 				try {
-					let url = "users/login";
+					let url = "users";
 					let data = {
 						email: this.email.value,
 						password: this.password.value,

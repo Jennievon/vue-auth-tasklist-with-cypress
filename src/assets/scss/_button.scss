@@ -15,8 +15,8 @@ button,
 
 	&.primary {
 		--btn-color: var(--primary-color);
-		background-color: var(--primary-color);
-		color: var(--color-white);
+		background-color: rgb(57, 90, 57);
+		color: #fff;
 
 		&.primary__transparent {
 			background-color: rgba(var(--primary-color-rgb), 0.2);
