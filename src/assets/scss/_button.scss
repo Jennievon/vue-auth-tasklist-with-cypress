@@ -24,6 +24,16 @@ button,
 		}
 	}
 
+	&.danger {
+		background-color: #ff3d3d;
+		color: #fff;
+	}
+
+	&.warning {
+		background-color: #b4ab2c;
+		color: #fff;
+	}
+
 	&.grey {
 		--btn-color: var(--lighter-grey-color);
 		background-color: #e8e7f0;

@@ -4,6 +4,7 @@ import VueRouter from "vue-router";
 
 import { mixin } from "./mixins/client.js";
 import { routes } from "./router/index.js";
+import { store } from "./store/index.js";
 
 // route guard
 const router = new VueRouter({
@@ -18,6 +19,7 @@ Vue.mixin(mixin);
 
 new Vue({
 	el: "#app",
-	router: router,
+	router,
+	store,
 	render: (h) => h(App),
 });

@@ -63,8 +63,10 @@
 						email: this.email.value,
 						password: this.password.value,
 					};
-					this.postData(url, data);
+					const response = await this.postData(url, data, "POST");
 					this.submitting = false;
+					localStorage.setItem("logged_in_user_token", response.token);
+					this.$router.push("/");
 				} catch (error) {
 					this.submitting = false;
 				}

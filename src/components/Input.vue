@@ -18,17 +18,7 @@
 </template>
 <script>
 	export default {
-		props: [
-			"placeholder",
-			"type",
-			"id",
-			"name",
-			"label",
-			"required",
-			"v_model",
-			"value",
-			"salaryExpectation",
-		],
+		props: ["placeholder", "type", "id", "name", "label", "required", "value"],
 		data() {
 			return { vm_data: this.value ? this.value : "" };
 		},

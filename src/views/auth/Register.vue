@@ -63,8 +63,9 @@
 						email: this.email.value,
 						password: this.password.value,
 					};
-					this.postData(url, data);
+					this.postData(url, data, "POST");
 					this.submitting = false;
+					this.$router.push("/login");
 				} catch (error) {
 					this.submitting = false;
 				}
