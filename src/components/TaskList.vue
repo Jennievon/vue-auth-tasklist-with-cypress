@@ -13,20 +13,29 @@
 				v-model="newTask"
 				@keyup.enter="addTask"
 				placeholder="New task"
+				data-cy="add-task-input"
 			/>
 			<span class="input-group-button">
-				<button @click="addTask" class="button primary">
+				<button @click="addTask" class="button primary" data-cy="add-task-btn">
 					<img src="../assets/images/add.svg" alt="add icon" /> Add
 				</button>
 			</span>
 		</div>
 
 		<div class="tasks__clear button-right">
-			<button class="button warning small" @click="clearCompleted">
+			<button
+				class="button warning small"
+				@click="clearCompleted"
+				data-cy="clear-completed-btn"
+			>
 				<img src="../assets/images/complete.svg" alt="complete icon" /> Clear
 				Completed
 			</button>
-			<button class="button danger small" @click="clearAll">
+			<button
+				class="button danger small"
+				@click="clearAll"
+				data-cy="clear-all-tasks-btn"
+			>
 				<img src="../assets/images/delete.svg" alt="delete icon" /> Clear All
 			</button>
 		</div>

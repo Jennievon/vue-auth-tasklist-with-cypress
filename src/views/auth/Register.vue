@@ -3,7 +3,7 @@
 		<div>
 			<h2>Register</h2>
 		</div>
-		<form @submit.prevent="registerUser">
+		<form @submit.prevent="registerUser" data-cy="registration-form">
 			<div class="input">
 				<Input
 					:id="'email'"
@@ -14,6 +14,7 @@
 					:required="'true'"
 					:value="email.value"
 					@vchange="email.value = $event"
+					:data_cy="'registration-email'"
 				/>
 			</div>
 			<div class="input">
@@ -26,6 +27,7 @@
 					:required="'true'"
 					:value="password.value"
 					@vchange="password.value = $event"
+					:data_cy="'registration-password'"
 				/>
 			</div>
 			<div class="button-wrapper">
@@ -33,6 +35,7 @@
 					class="primary has-icon icon-right"
 					type="submit"
 					:disabled="submitting"
+					data-cy="submit"
 				>
 					Register
 				</button>
@@ -65,7 +68,7 @@
 					};
 					this.postData(url, data, "POST");
 					this.submitting = false;
-					this.$router.push("/login");
+					this.$router.push("/auth/login");
 				} catch (error) {
 					this.submitting = false;
 				}

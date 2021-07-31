@@ -3,7 +3,7 @@
 		<div>
 			<h2>Login</h2>
 		</div>
-		<form @submit.prevent="login">
+		<form @submit.prevent="login" data-cy="login-form">
 			<div class="input">
 				<Input
 					:id="'email'"
@@ -14,6 +14,7 @@
 					:required="'true'"
 					:value="email.value"
 					@vchange="email.value = $event"
+					:data_cy="'login-email'"
 				/>
 			</div>
 			<div class="input">
@@ -26,6 +27,7 @@
 					:required="'true'"
 					:value="password.value"
 					@vchange="password.value = $event"
+					:data_cy="'login-password'"
 				/>
 			</div>
 			<div class="button-wrapper">
@@ -33,8 +35,9 @@
 					class="primary has-icon icon-right"
 					type="submit"
 					:disabled="submitting"
+					data-cy="submit"
 				>
-					Register
+					Login
 				</button>
 			</div>
 		</form>

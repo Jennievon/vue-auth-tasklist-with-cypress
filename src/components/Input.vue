@@ -12,13 +12,23 @@
 			:placeholder="placeholder"
 			:value="value"
 			:required="required ? true : false"
+			:data-cy="data_cy"
 			@keyup="inputChanged($event)"
 		/>
 	</div>
 </template>
 <script>
 	export default {
-		props: ["placeholder", "type", "id", "name", "label", "required", "value"],
+		props: [
+			"placeholder",
+			"type",
+			"id",
+			"name",
+			"label",
+			"required",
+			"value",
+			"data_cy",
+		],
 		data() {
 			return { vm_data: this.value ? this.value : "" };
 		},
