@@ -1,6 +1,6 @@
 <template>
 	<section class="tasks">
-		<h1>
+		<h1 data-cy="index-title">
 			Tasks
 			<transition name="fade">
 				<small v-if="incomplete">({{ incomplete }})</small>
@@ -16,7 +16,12 @@
 				data-cy="add-task-input"
 			/>
 			<span class="input-group-button">
-				<button @click="addTask" class="button primary" data-cy="add-task-btn">
+				<button
+					@click="addTask"
+					class="button primary"
+					data-cy="add-task-btn"
+					type="submit"
+				>
 					<img src="../assets/images/add.svg" alt="add icon" /> Add
 				</button>
 			</span>
@@ -26,7 +31,7 @@
 			<button
 				class="button warning small"
 				@click="clearCompleted"
-				data-cy="clear-completed-btn"
+				data-cy="clear-completed-tasks-btn"
 			>
 				<img src="../assets/images/complete.svg" alt="complete icon" /> Clear
 				Completed
@@ -40,7 +45,12 @@
 			</button>
 		</div>
 
-		<transition-group name="fade" tag="ul" class="tasks__list no-bullet">
+		<transition-group
+			name="fade"
+			tag="ul"
+			class="tasks__list no-bullet"
+			data-cy="task-list"
+		>
 			<TaskItem
 				v-for="task in tasks"
 				@remove="removeTask(task)"

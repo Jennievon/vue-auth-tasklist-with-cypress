@@ -1,11 +1,16 @@
 <template>
 	<li class="tasks__item">
-		<button :class="className" @click.self="$emit('complete')">
+		<button
+			:class="className"
+			@click.self="$emit('complete')"
+			data-cy="single-task"
+		>
 			{{ task.text }}
 		</button>
 		<button
 			class="tasks__item__remove button alert pull-right"
 			@click="$emit('remove')"
+			data-cy="remove-single-task-btn"
 		>
 			<img src="../assets/images/close.svg" alt="close icon" />
 		</button>

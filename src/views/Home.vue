@@ -1,10 +1,11 @@
 <template>
 	<div>
-		<div>
-			<div id="app">
-				<TaskList :tasks="tasks"></TaskList>
-			</div>
-		</div>
+		<header>
+			<nav>
+				<button class="primary" @click="logout">Logout</button>
+			</nav>
+		</header>
+		<TaskList :tasks="tasks"></TaskList>
 	</div>
 </template>
 
@@ -29,6 +30,10 @@
 		methods: {
 			async getTodos() {
 				await this.$store.dispatch("getTodos");
+			},
+			async logout() {
+				localStorage.removeItem("logged_in_user_token");
+				this.$router.push("/auth/login");
 			},
 		},
 	};

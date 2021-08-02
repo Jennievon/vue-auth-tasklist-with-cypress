@@ -1,11 +1,12 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import { mixin } from "../mixins/client";
+
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
 	state: {
-		id: localStorage.getItem("logged_in_user_token"),
+		token: localStorage.getItem("logged_in_user_token"),
 		tasks: [],
 	},
 
@@ -16,13 +17,19 @@ export const store = new Vuex.Store({
 	},
 
 	getters: {
-		isAuthenticated: (state) => state.id,
+		isAuthenticated: (state) => state.token,
 		tasks: (state) => state.tasks,
 	},
 
 	actions: {
 		async getTodos({ commit }) {
-			const response = await mixin.methods.postData("todos", {}, "GET");
+			console.log(localStorage.getItem("logged_in_user_token"), "tkn");
+			const response = await mixin.methods.postData(
+				"todos",
+				{},
+				"GET",
+				localStorage.getItem("logged_in_user_token"),
+			);
 			commit("SET_TASKS", response.todos);
 		},
 	},

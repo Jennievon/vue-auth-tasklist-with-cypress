@@ -1,7 +1,7 @@
 export const mixin = {
 	methods: {
-		async postData(url = "", data = {}, method) {
-			const token = localStorage.getItem("logged_in_user_token");
+		async postData(url = "", data = {}, method, auth) {
+			const token = auth || localStorage.getItem("logged_in_user_token");
 			let headers = {
 				method: method,
 				mode: "cors",
@@ -19,6 +19,7 @@ export const mixin = {
 			}
 			const response = await fetch(`http://localhost:3000/${url}`, headers);
 			const res = await response.json();
+			// console.log(res, "res");
 			return res;
 		},
 	},

@@ -29,13 +29,13 @@ const ifAuthenticated = (to, from, next) => {
 export const routes = [
 	{
 		path: "*",
-		redirect: "/",
+		redirect: "/todos",
 	},
 	{
-		path: "/",
+		path: "/todos",
 		name: "home",
 		component: Home,
-		beforeEnter: ifAuthenticated,
+		// beforeEnter: ifAuthenticated,
 	},
 	{
 		path: "/auth/register",
