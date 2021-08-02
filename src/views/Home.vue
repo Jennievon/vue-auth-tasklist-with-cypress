@@ -31,7 +31,7 @@
 			async getTodos() {
 				await this.$store.dispatch("getTodos");
 			},
-			async logout() {
+			logout() {
 				localStorage.removeItem("logged_in_user_token");
 				this.$router.push("/auth/login");
 			},
